@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0D8624A5-484A-4E1A-A388-57BA6BECBC98</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Bubble Madness</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B6157D96-0148-4593-A08F-54F21F6BDF94</key>
+		<string>ssh://github.com/vossgang/bubblemadness.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Bubble Madness.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B6157D96-0148-4593-A08F-54F21F6BDF94</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/vossgang/bubblemadness.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B6157D96-0148-4593-A08F-54F21F6BDF94</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B6157D96-0148-4593-A08F-54F21F6BDF94</string>
+			<key>IDESourceControlWCCName</key>
+			<string>bubblemadness</string>
+		</dict>
+	</array>
+</dict>
+</plist>
