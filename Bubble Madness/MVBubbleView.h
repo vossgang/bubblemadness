@@ -22,5 +22,9 @@
 
 - (id)initFrameForStarting:(CGRect)frame;
 -(void)removeForgroundFromView;
+-(void)removePointImageFromView;
+-(void)removeSubviews;
+
+-(void)resetFGAndPointImages;
 
 @end

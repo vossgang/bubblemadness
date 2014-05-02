@@ -14,8 +14,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        
         self.background = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         self.forground  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         
@@ -26,7 +24,6 @@
         [self addSubview:self.forground];
         [self calulateAndAddPointImage:frame];
         [self setBehavior];
-        
     }
     return self;
 }
@@ -35,7 +32,6 @@
 {
     self.itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[self]];
     self.itemBehavior.elasticity = 1.0;
-
 }
 
 - (id)initFrameForStarting:(CGRect)frame
@@ -52,8 +48,10 @@
             self.background = [self.background initWithFrame:CGRectMake(0, 35.75,  frame.size.width, 56.5)];
             self.background.image = [UIImage imageNamed:@"Scores.png"];
         } else {
-            self.background = [self.background initWithFrame:CGRectMake(0, 25,  frame.size.width, 51)];
-            self.background.image = [UIImage imageNamed:@"Credits.png"];
+            int width = frame.size.width * .85;
+            int height = width * .334;
+            self.background = [self.background initWithFrame:CGRectMake(((frame.size.width - width) * .5), ((frame.size.height/2) - (height * .5)),  width, height)];
+            self.background.image = [UIImage imageNamed:@"Bubbles"];
         }
         
         [self addSubview:self.background];
@@ -74,10 +72,12 @@
 -(void)calulateAndAddPointImage:(CGRect)frame
 {
     
-    CGSize thissize = CGSizeMake((frame.size.width / 2), (frame.size.height / 2));
+    CGSize thissize = CGSizeMake((frame.size.width / 4), (frame.size.height / 2));
+    
     CGPoint center = CGPointMake(frame.size.width / 2, frame.size.height / 2);
     CGPoint startpoint = CGPointMake((center.x - (thissize.width / 2)),(center.y - (thissize.height / 2)));
-    self.pointImage = [[UIImageView alloc] initWithFrame:CGRectMake((startpoint.x), (startpoint.y), (thissize.height), (thissize.width))];
+    
+    self.pointImage = [[UIImageView alloc] initWithFrame:CGRectMake((startpoint.x), (startpoint.y), (thissize.width), (thissize.height))];
     
     if (self.frame.size.height >= 122) {
         self.pointImage.image = [UIImage imageNamed:@"1.png"];
@@ -107,6 +107,11 @@
         self.pointImage.image = [UIImage imageNamed:@"9.png"];
         self.scoreValue = 9;
     } else if (self.frame.size.height >= 33){
+        
+        thissize = CGSizeMake((frame.size.width / 2), (frame.size.height / 2));
+        startpoint = CGPointMake((center.x - (thissize.width / 2)),(center.y - (thissize.height / 2)));
+        self.pointImage = [[UIImageView alloc] initWithFrame:CGRectMake((startpoint.x), (startpoint.y), (thissize.width), (thissize.height))];
+        
         self.pointImage.image = [UIImage imageNamed:@"10.png"];
         self.scoreValue = 10;
     } else {
@@ -114,16 +119,28 @@
         self.scoreValue = 0;
     }
     [self addSubview:self.pointImage];
-    
 }
 
+-(void)resetFGAndPointImages
+{
+    [self addSubview:self.forground];
+    [self addSubview:self.pointImage];
+}
+
+-(void)removeSubviews
+{
+    [self removeForgroundFromView];
+    [self removePointImageFromView];
+    [self.background removeFromSuperview];
+}
 
 -(void)removeForgroundFromView
 {
     [self.forground removeFromSuperview];
-    self.forground = nil;
 }
 
-
-
+-(void)removePointImageFromView
+{
+    [self.pointImage removeFromSuperview];
+}
 @end

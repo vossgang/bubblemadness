@@ -10,7 +10,9 @@
 		C90137D318CEC02D0020D54E /* CreditsViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = C90137D218CEC02D0020D54E /* CreditsViewcontroller.m */; };
 		C90137D818CED4950020D54E /* MVHighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90137D718CED4950020D54E /* MVHighScoreViewController.m */; };
 		C90137DB18CED6430020D54E /* MVHighScore.m in Sources */ = {isa = PBXBuildFile; fileRef = C90137DA18CED6430020D54E /* MVHighScore.m */; };
+		C901E69D190EF6A000798529 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C901E69C190EF6A000798529 /* UIColor+Extension.m */; };
 		C903F1DC18F8932C00E4CC51 /* EnterHighScoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = C903F1DB18F8932C00E4CC51 /* EnterHighScoreController.m */; };
+		C91AB1211910626C0042A4C3 /* POP1.png in Resources */ = {isa = PBXBuildFile; fileRef = C91AB1201910626C0042A4C3 /* POP1.png */; };
 		C936E48118CAEA34002584B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C936E48018CAEA34002584B7 /* Foundation.framework */; };
 		C936E48318CAEA34002584B7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C936E48218CAEA34002584B7 /* CoreGraphics.framework */; };
 		C936E48518CAEA34002584B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C936E48418CAEA34002584B7 /* UIKit.framework */; };
@@ -18,7 +20,6 @@
 		C936E48D18CAEA34002584B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C936E48C18CAEA34002584B7 /* main.m */; };
 		C936E49118CAEA34002584B7 /* MVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C936E49018CAEA34002584B7 /* MVAppDelegate.m */; };
 		C936E49418CAEA34002584B7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C936E49218CAEA34002584B7 /* Main_iPhone.storyboard */; };
-		C936E49718CAEA34002584B7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C936E49518CAEA34002584B7 /* Main_iPad.storyboard */; };
 		C936E49A18CAEA34002584B7 /* MVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C936E49918CAEA34002584B7 /* MVViewController.m */; };
 		C936E49C18CAEA34002584B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C936E49B18CAEA34002584B7 /* Images.xcassets */; };
 		C936E4A318CAEA34002584B7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C936E4A218CAEA34002584B7 /* XCTest.framework */; };
@@ -26,45 +27,44 @@
 		C936E4A518CAEA34002584B7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C936E48418CAEA34002584B7 /* UIKit.framework */; };
 		C936E4AD18CAEA34002584B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C936E4AB18CAEA34002584B7 /* InfoPlist.strings */; };
 		C936E4AF18CAEA34002584B7 /* Bubble_MadnessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C936E4AE18CAEA34002584B7 /* Bubble_MadnessTests.m */; };
-		C936E4CA18CAEA9E002584B7 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4BC18CAEA9E002584B7 /* 1.png */; };
-		C936E4CB18CAEA9E002584B7 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4BD18CAEA9E002584B7 /* 2.png */; };
-		C936E4CC18CAEA9E002584B7 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4BE18CAEA9E002584B7 /* 3.png */; };
-		C936E4CD18CAEA9E002584B7 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4BF18CAEA9E002584B7 /* 4.png */; };
-		C936E4CE18CAEA9E002584B7 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C018CAEA9E002584B7 /* 5.png */; };
-		C936E4CF18CAEA9E002584B7 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C118CAEA9E002584B7 /* 6.png */; };
-		C936E4D018CAEA9E002584B7 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C218CAEA9E002584B7 /* 7.png */; };
-		C936E4D118CAEA9E002584B7 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C318CAEA9E002584B7 /* 8.png */; };
-		C936E4D218CAEA9E002584B7 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C418CAEA9E002584B7 /* 9.png */; };
-		C936E4D318CAEA9E002584B7 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C518CAEA9E002584B7 /* 10.png */; };
-		C936E4D418CAEA9E002584B7 /* 100BubblesPopped.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C618CAEA9E002584B7 /* 100BubblesPopped.png */; };
 		C936E4D518CAEA9E002584B7 /* GameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C718CAEA9E002584B7 /* GameOver.png */; };
-		C936E4D618CAEA9E002584B7 /* KeepGoing.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C818CAEA9E002584B7 /* KeepGoing.png */; };
 		C936E4D718CAEA9E002584B7 /* NewHighScore.png in Resources */ = {isa = PBXBuildFile; fileRef = C936E4C918CAEA9E002584B7 /* NewHighScore.png */; };
 		C936E50018CAEB38002584B7 /* MVBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C936E4FF18CAEB38002584B7 /* MVBubbleView.m */; };
-		C95CA10E18FB89E20076BA27 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = C95CA10D18FB89E20076BA27 /* 0.png */; };
 		C964D8AA18CD29460030E299 /* addTime.png in Resources */ = {isa = PBXBuildFile; fileRef = C964D8A918CD29460030E299 /* addTime.png */; };
-		C979237318CC10DE005E2328 /* POP1.png in Resources */ = {isa = PBXBuildFile; fileRef = C979236C18CC10DE005E2328 /* POP1.png */; };
-		C979237418CC10DE005E2328 /* POP2.png in Resources */ = {isa = PBXBuildFile; fileRef = C979236D18CC10DE005E2328 /* POP2.png */; };
-		C979237518CC10DE005E2328 /* POP3.png in Resources */ = {isa = PBXBuildFile; fileRef = C979236E18CC10DE005E2328 /* POP3.png */; };
+		C977AFC51912EBDB0057D73C /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFC41912EBDB0057D73C /* 0.png */; };
+		C977AFC71912EC1E0057D73C /* BubblesPopped.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFC61912EC1E0057D73C /* BubblesPopped.png */; };
+		C977AFCE1912ED2C0057D73C /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFC81912ED2C0057D73C /* 1.png */; };
+		C977AFCF1912ED2C0057D73C /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFC91912ED2C0057D73C /* 2.png */; };
+		C977AFD01912ED2C0057D73C /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFCA1912ED2C0057D73C /* 3.png */; };
+		C977AFD11912ED2C0057D73C /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFCB1912ED2C0057D73C /* 5.png */; };
+		C977AFD21912ED2C0057D73C /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFCC1912ED2C0057D73C /* 6.png */; };
+		C977AFD31912ED2C0057D73C /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFCD1912ED2C0057D73C /* 7.png */; };
+		C977AFD61912ED350057D73C /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFD41912ED350057D73C /* 8.png */; };
+		C977AFD71912ED350057D73C /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFD51912ED350057D73C /* 9.png */; };
+		C977AFD91912ED3C0057D73C /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFD81912ED3C0057D73C /* 4.png */; };
+		C977AFDB1912ED8F0057D73C /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = C977AFDA1912ED8F0057D73C /* 10.png */; };
 		C979237618CC10DE005E2328 /* POP4.png in Resources */ = {isa = PBXBuildFile; fileRef = C979236F18CC10DE005E2328 /* POP4.png */; };
-		C979237718CC10DE005E2328 /* POP5.png in Resources */ = {isa = PBXBuildFile; fileRef = C979237018CC10DE005E2328 /* POP5.png */; };
-		C979237818CC10DE005E2328 /* POP6.png in Resources */ = {isa = PBXBuildFile; fileRef = C979237118CC10DE005E2328 /* POP6.png */; };
-		C979237918CC10DE005E2328 /* POP7.png in Resources */ = {isa = PBXBuildFile; fileRef = C979237218CC10DE005E2328 /* POP7.png */; };
 		C97A3D0818CF754A00FC10D2 /* MVHighScoreBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = C97A3D0718CF754A00FC10D2 /* MVHighScoreBubble.m */; };
 		C97E0B8C18CBC20100634FCA /* newNavBar.png in Resources */ = {isa = PBXBuildFile; fileRef = C97E0B8B18CBC20100634FCA /* newNavBar.png */; };
+		C986BD2119103A070017126D /* bubblepop2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C9EF6CE7191037E60003364E /* bubblepop2.m4a */; };
+		C986BD2219103A090017126D /* bubblepop3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C9EF6CE8191038570003364E /* bubblepop3.m4a */; };
+		C9870DF61912BD54000B00D9 /* CreditsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9870DF51912BD54000B00D9 /* CreditsView.m */; };
 		C99E466418CAF0140097D430 /* MVStatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99E466318CAF0140097D430 /* MVStatingViewController.m */; };
 		C99E466818CAFAC40097D430 /* Credits.png in Resources */ = {isa = PBXBuildFile; fileRef = C99E466518CAFAC40097D430 /* Credits.png */; };
 		C99E466918CAFAC40097D430 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = C99E466618CAFAC40097D430 /* Play.png */; };
 		C99E466A18CAFAC40097D430 /* Scores.png in Resources */ = {isa = PBXBuildFile; fileRef = C99E466718CAFAC40097D430 /* Scores.png */; };
 		C99EBD0618CBADB300F23842 /* MVButtonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C99EBD0518CBADB300F23842 /* MVButtonBar.m */; };
+		C9A1353E1913629000F3B3FB /* Bubbles.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A1353D1913629000F3B3FB /* Bubbles.png */; };
 		C9B191C018F8BB8E009CE335 /* save.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B191BF18F8BB8E009CE335 /* save.plist */; };
 		C9E25CC818D4020B0070FCB1 /* B1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CC318D4020B0070FCB1 /* B1.jpg */; };
-		C9E25CC918D4020B0070FCB1 /* B2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CC418D4020B0070FCB1 /* B2.jpg */; };
-		C9E25CCA18D4020B0070FCB1 /* B3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CC518D4020B0070FCB1 /* B3.jpg */; };
-		C9E25CCB18D4020B0070FCB1 /* B4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CC618D4020B0070FCB1 /* B4.jpg */; };
-		C9E25CCC18D4020B0070FCB1 /* B5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CC718D4020B0070FCB1 /* B5.jpg */; };
+		C9E25CCB18D4020B0070FCB1 /* B2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CC618D4020B0070FCB1 /* B2.jpg */; };
+		C9E25CCC18D4020B0070FCB1 /* B3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CC718D4020B0070FCB1 /* B3.jpg */; };
 		C9E25CCE18D4036C0070FCB1 /* bubbleFG.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CCD18D4036C0070FCB1 /* bubbleFG.png */; };
 		C9E25CD018D403730070FCB1 /* bubbleBG.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E25CCF18D403730070FCB1 /* bubbleBG.png */; };
+		C9EDD41C19119191006132E7 /* KeepGoing.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EDD41B19119191006132E7 /* KeepGoing.png */; };
+		C9EDD41E191196C1006132E7 /* 100BubblesPopped.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EDD41D191196C1006132E7 /* 100BubblesPopped.png */; };
+		C9EF6CE5191025B30003364E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9EF6CE4191025B30003364E /* AudioToolbox.framework */; };
+		C9EF6CE6191027D40003364E /* bubblepop1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C9EF6CE1191024D80003364E /* bubblepop1.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,56 +84,54 @@
 		C90137D718CED4950020D54E /* MVHighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHighScoreViewController.m; sourceTree = "<group>"; };
 		C90137D918CED6430020D54E /* MVHighScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHighScore.h; sourceTree = "<group>"; };
 		C90137DA18CED6430020D54E /* MVHighScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHighScore.m; sourceTree = "<group>"; };
+		C901E69B190EF6A000798529 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		C901E69C190EF6A000798529 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		C903F1DA18F8932C00E4CC51 /* EnterHighScoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterHighScoreController.h; sourceTree = "<group>"; };
 		C903F1DB18F8932C00E4CC51 /* EnterHighScoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterHighScoreController.m; sourceTree = "<group>"; };
-		C936E47D18CAEA34002584B7 /* Bubble Madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90C98ED1911A7200038F799 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = SOURCE_ROOT; };
+		C91AB1201910626C0042A4C3 /* POP1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POP1.png; sourceTree = "<group>"; };
+		C936E47D18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C936E48018CAEA34002584B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C936E48218CAEA34002584B7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C936E48418CAEA34002584B7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		C936E48818CAEA34002584B7 /* Bubble Madness-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bubble Madness-Info.plist"; sourceTree = "<group>"; };
+		C936E48818CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Info.plist"; sourceTree = "<group>"; };
 		C936E48A18CAEA34002584B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C936E48C18CAEA34002584B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C936E48E18CAEA34002584B7 /* Bubble Madness-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bubble Madness-Prefix.pch"; sourceTree = "<group>"; };
+		C936E48E18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Prefix.pch"; sourceTree = "<group>"; };
 		C936E48F18CAEA34002584B7 /* MVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVAppDelegate.h; sourceTree = "<group>"; };
 		C936E49018CAEA34002584B7 /* MVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVAppDelegate.m; sourceTree = "<group>"; };
 		C936E49318CAEA34002584B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		C936E49618CAEA34002584B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		C936E49818CAEA34002584B7 /* MVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVViewController.h; sourceTree = "<group>"; };
 		C936E49918CAEA34002584B7 /* MVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVViewController.m; sourceTree = "<group>"; };
 		C936E49B18CAEA34002584B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C936E4A118CAEA34002584B7 /* Bubble MadnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bubble MadnessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C936E4A118CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C936E4A218CAEA34002584B7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		C936E4AA18CAEA34002584B7 /* Bubble MadnessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bubble MadnessTests-Info.plist"; sourceTree = "<group>"; };
+		C936E4AA18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests-Info.plist"; sourceTree = "<group>"; };
 		C936E4AC18CAEA34002584B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C936E4AE18CAEA34002584B7 /* Bubble_MadnessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bubble_MadnessTests.m; sourceTree = "<group>"; };
-		C936E4BC18CAEA9E002584B7 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		C936E4BD18CAEA9E002584B7 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		C936E4BE18CAEA9E002584B7 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		C936E4BF18CAEA9E002584B7 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
-		C936E4C018CAEA9E002584B7 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
-		C936E4C118CAEA9E002584B7 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
-		C936E4C218CAEA9E002584B7 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
-		C936E4C318CAEA9E002584B7 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
-		C936E4C418CAEA9E002584B7 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
-		C936E4C518CAEA9E002584B7 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
-		C936E4C618CAEA9E002584B7 /* 100BubblesPopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100BubblesPopped.png; sourceTree = "<group>"; };
 		C936E4C718CAEA9E002584B7 /* GameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameOver.png; sourceTree = "<group>"; };
-		C936E4C818CAEA9E002584B7 /* KeepGoing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeepGoing.png; sourceTree = "<group>"; };
 		C936E4C918CAEA9E002584B7 /* NewHighScore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewHighScore.png; sourceTree = "<group>"; };
 		C936E4FE18CAEB38002584B7 /* MVBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVBubbleView.h; sourceTree = "<group>"; };
 		C936E4FF18CAEB38002584B7 /* MVBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVBubbleView.m; sourceTree = "<group>"; };
-		C95CA10D18FB89E20076BA27 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		C964D8A918CD29460030E299 /* addTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addTime.png; sourceTree = "<group>"; };
-		C979236C18CC10DE005E2328 /* POP1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POP1.png; sourceTree = "<group>"; };
-		C979236D18CC10DE005E2328 /* POP2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POP2.png; sourceTree = "<group>"; };
-		C979236E18CC10DE005E2328 /* POP3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POP3.png; sourceTree = "<group>"; };
+		C977AFC41912EBDB0057D73C /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		C977AFC61912EC1E0057D73C /* BubblesPopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BubblesPopped.png; sourceTree = "<group>"; };
+		C977AFC81912ED2C0057D73C /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		C977AFC91912ED2C0057D73C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		C977AFCA1912ED2C0057D73C /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		C977AFCB1912ED2C0057D73C /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		C977AFCC1912ED2C0057D73C /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		C977AFCD1912ED2C0057D73C /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		C977AFD41912ED350057D73C /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		C977AFD51912ED350057D73C /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		C977AFD81912ED3C0057D73C /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		C977AFDA1912ED8F0057D73C /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
 		C979236F18CC10DE005E2328 /* POP4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POP4.png; sourceTree = "<group>"; };
-		C979237018CC10DE005E2328 /* POP5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POP5.png; sourceTree = "<group>"; };
-		C979237118CC10DE005E2328 /* POP6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POP6.png; sourceTree = "<group>"; };
-		C979237218CC10DE005E2328 /* POP7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = POP7.png; sourceTree = "<group>"; };
 		C97A3D0618CF754A00FC10D2 /* MVHighScoreBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHighScoreBubble.h; sourceTree = "<group>"; };
 		C97A3D0718CF754A00FC10D2 /* MVHighScoreBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHighScoreBubble.m; sourceTree = "<group>"; };
 		C97E0B8B18CBC20100634FCA /* newNavBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newNavBar.png; sourceTree = "<group>"; };
+		C9870DF41912BD54000B00D9 /* CreditsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsView.h; sourceTree = SOURCE_ROOT; };
+		C9870DF51912BD54000B00D9 /* CreditsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsView.m; sourceTree = SOURCE_ROOT; };
 		C99E466218CAF0140097D430 /* MVStatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MVStatingViewController.h; path = ../MVStatingViewController.h; sourceTree = "<group>"; };
 		C99E466318CAF0140097D430 /* MVStatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MVStatingViewController.m; path = ../MVStatingViewController.m; sourceTree = "<group>"; };
 		C99E466518CAFAC40097D430 /* Credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Credits.png; sourceTree = "<group>"; };
@@ -141,14 +139,20 @@
 		C99E466718CAFAC40097D430 /* Scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scores.png; sourceTree = "<group>"; };
 		C99EBD0418CBADB300F23842 /* MVButtonBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVButtonBar.h; sourceTree = "<group>"; };
 		C99EBD0518CBADB300F23842 /* MVButtonBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVButtonBar.m; sourceTree = "<group>"; };
+		C9A1353D1913629000F3B3FB /* Bubbles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bubbles.png; sourceTree = "<group>"; };
 		C9B191BF18F8BB8E009CE335 /* save.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = save.plist; sourceTree = "<group>"; };
 		C9E25CC318D4020B0070FCB1 /* B1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B1.jpg; sourceTree = "<group>"; };
-		C9E25CC418D4020B0070FCB1 /* B2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B2.jpg; sourceTree = "<group>"; };
-		C9E25CC518D4020B0070FCB1 /* B3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B3.jpg; sourceTree = "<group>"; };
-		C9E25CC618D4020B0070FCB1 /* B4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B4.jpg; sourceTree = "<group>"; };
-		C9E25CC718D4020B0070FCB1 /* B5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B5.jpg; sourceTree = "<group>"; };
+		C9E25CC618D4020B0070FCB1 /* B2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B2.jpg; sourceTree = "<group>"; };
+		C9E25CC718D4020B0070FCB1 /* B3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B3.jpg; sourceTree = "<group>"; };
 		C9E25CCD18D4036C0070FCB1 /* bubbleFG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleFG.png; sourceTree = "<group>"; };
 		C9E25CCF18D403730070FCB1 /* bubbleBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleBG.png; sourceTree = "<group>"; };
+		C9EDD41B19119191006132E7 /* KeepGoing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeepGoing.png; sourceTree = "<group>"; };
+		C9EDD41D191196C1006132E7 /* 100BubblesPopped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100BubblesPopped.png; sourceTree = "<group>"; };
+		C9EF6CE1191024D80003364E /* bubblepop1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubblepop1.m4a; sourceTree = "<group>"; };
+		C9EF6CE21910255D0003364E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		C9EF6CE4191025B30003364E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C9EF6CE7191037E60003364E /* bubblepop2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubblepop2.m4a; sourceTree = "<group>"; };
+		C9EF6CE8191038570003364E /* bubblepop3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = bubblepop3.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9EF6CE5191025B30003364E /* AudioToolbox.framework in Frameworks */,
 				C936E48318CAEA34002584B7 /* CoreGraphics.framework in Frameworks */,
 				C936E48518CAEA34002584B7 /* UIKit.framework in Frameworks */,
 				C936E48118CAEA34002584B7 /* Foundation.framework in Frameworks */,
@@ -180,21 +185,24 @@
 			children = (
 				C90137D118CEC02D0020D54E /* CreditsViewcontroller.h */,
 				C90137D218CEC02D0020D54E /* CreditsViewcontroller.m */,
-				C936E49818CAEA34002584B7 /* MVViewController.h */,
-				C936E49918CAEA34002584B7 /* MVViewController.m */,
 				C99E466218CAF0140097D430 /* MVStatingViewController.h */,
 				C99E466318CAF0140097D430 /* MVStatingViewController.m */,
+				C936E49818CAEA34002584B7 /* MVViewController.h */,
+				C936E49918CAEA34002584B7 /* MVViewController.m */,
+				C90C98ED1911A7200038F799 /* constants.h */,
 				C903F1DA18F8932C00E4CC51 /* EnterHighScoreController.h */,
 				C903F1DB18F8932C00E4CC51 /* EnterHighScoreController.m */,
 				C90137D618CED4950020D54E /* MVHighScoreViewController.h */,
 				C90137D718CED4950020D54E /* MVHighScoreViewController.m */,
 			);
 			name = Controllers;
+			path = "Bubble Madness";
 			sourceTree = "<group>";
 		};
 		C90137D518CED4410020D54E /* items */ = {
 			isa = PBXGroup;
 			children = (
+				C936E49218CAEA34002584B7 /* Main_iPhone.storyboard */,
 				C936E4FE18CAEB38002584B7 /* MVBubbleView.h */,
 				C936E4FF18CAEB38002584B7 /* MVBubbleView.m */,
 				C90137D918CED6430020D54E /* MVHighScore.h */,
@@ -203,14 +211,29 @@
 				C99EBD0518CBADB300F23842 /* MVButtonBar.m */,
 				C97A3D0618CF754A00FC10D2 /* MVHighScoreBubble.h */,
 				C97A3D0718CF754A00FC10D2 /* MVHighScoreBubble.m */,
+				C9870DF41912BD54000B00D9 /* CreditsView.h */,
+				C9870DF51912BD54000B00D9 /* CreditsView.m */,
 			);
 			name = items;
+			path = "Bubble Madness";
+			sourceTree = "<group>";
+		};
+		C92E263D19106FBE00959D18 /* sound files */ = {
+			isa = PBXGroup;
+			children = (
+				C9EF6CE1191024D80003364E /* bubblepop1.m4a */,
+				C9EF6CE7191037E60003364E /* bubblepop2.m4a */,
+				C9EF6CE8191038570003364E /* bubblepop3.m4a */,
+			);
+			name = "sound files";
 			sourceTree = "<group>";
 		};
 		C936E47418CAEA34002584B7 = {
 			isa = PBXGroup;
 			children = (
 				C9B191BF18F8BB8E009CE335 /* save.plist */,
+				C90137D518CED4410020D54E /* items */,
+				C90137D418CED4070020D54E /* Controllers */,
 				C936E48618CAEA34002584B7 /* Bubble Madness */,
 				C936E4A818CAEA34002584B7 /* Bubble MadnessTests */,
 				C936E47F18CAEA34002584B7 /* Frameworks */,
@@ -221,8 +244,8 @@
 		C936E47E18CAEA34002584B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C936E47D18CAEA34002584B7 /* Bubble Madness.app */,
-				C936E4A118CAEA34002584B7 /* Bubble MadnessTests.xctest */,
+				C936E47D18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app */,
+				C936E4A118CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +253,8 @@
 		C936E47F18CAEA34002584B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9EF6CE4191025B30003364E /* AudioToolbox.framework */,
+				C9EF6CE21910255D0003364E /* CoreAudio.framework */,
 				C936E48018CAEA34002584B7 /* Foundation.framework */,
 				C936E48218CAEA34002584B7 /* CoreGraphics.framework */,
 				C936E48418CAEA34002584B7 /* UIKit.framework */,
@@ -243,10 +268,6 @@
 			children = (
 				C936E48F18CAEA34002584B7 /* MVAppDelegate.h */,
 				C936E49018CAEA34002584B7 /* MVAppDelegate.m */,
-				C936E49218CAEA34002584B7 /* Main_iPhone.storyboard */,
-				C936E49518CAEA34002584B7 /* Main_iPad.storyboard */,
-				C90137D518CED4410020D54E /* items */,
-				C90137D418CED4070020D54E /* Controllers */,
 				C936E49B18CAEA34002584B7 /* Images.xcassets */,
 				C936E48718CAEA34002584B7 /* Supporting Files */,
 			);
@@ -256,11 +277,14 @@
 		C936E48718CAEA34002584B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C92E263D19106FBE00959D18 /* sound files */,
 				C936E4B818CAEA54002584B7 /* image files */,
-				C936E48818CAEA34002584B7 /* Bubble Madness-Info.plist */,
+				C901E69B190EF6A000798529 /* UIColor+Extension.h */,
+				C901E69C190EF6A000798529 /* UIColor+Extension.m */,
+				C936E48818CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Info.plist */,
 				C936E48918CAEA34002584B7 /* InfoPlist.strings */,
 				C936E48C18CAEA34002584B7 /* main.m */,
-				C936E48E18CAEA34002584B7 /* Bubble Madness-Prefix.pch */,
+				C936E48E18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -277,7 +301,7 @@
 		C936E4A918CAEA34002584B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C936E4AA18CAEA34002584B7 /* Bubble MadnessTests-Info.plist */,
+				C936E4AA18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests-Info.plist */,
 				C936E4AB18CAEA34002584B7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -296,15 +320,10 @@
 		C936E4B918CAEA61002584B7 /* bubbles */ = {
 			isa = PBXGroup;
 			children = (
+				C91AB1201910626C0042A4C3 /* POP1.png */,
 				C9E25CCF18D403730070FCB1 /* bubbleBG.png */,
 				C9E25CCD18D4036C0070FCB1 /* bubbleFG.png */,
-				C979236C18CC10DE005E2328 /* POP1.png */,
-				C979236D18CC10DE005E2328 /* POP2.png */,
-				C979236E18CC10DE005E2328 /* POP3.png */,
 				C979236F18CC10DE005E2328 /* POP4.png */,
-				C979237018CC10DE005E2328 /* POP5.png */,
-				C979237118CC10DE005E2328 /* POP6.png */,
-				C979237218CC10DE005E2328 /* POP7.png */,
 			);
 			name = bubbles;
 			sourceTree = "<group>";
@@ -313,10 +332,8 @@
 			isa = PBXGroup;
 			children = (
 				C9E25CC318D4020B0070FCB1 /* B1.jpg */,
-				C9E25CC418D4020B0070FCB1 /* B2.jpg */,
-				C9E25CC518D4020B0070FCB1 /* B3.jpg */,
-				C9E25CC618D4020B0070FCB1 /* B4.jpg */,
-				C9E25CC718D4020B0070FCB1 /* B5.jpg */,
+				C9E25CC618D4020B0070FCB1 /* B2.jpg */,
+				C9E25CC718D4020B0070FCB1 /* B3.jpg */,
 			);
 			name = backgrounds;
 			sourceTree = "<group>";
@@ -324,25 +341,27 @@
 		C936E4BB18CAEA83002584B7 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				C95CA10D18FB89E20076BA27 /* 0.png */,
+				C977AFC61912EC1E0057D73C /* BubblesPopped.png */,
 				C964D8A918CD29460030E299 /* addTime.png */,
+				C9A1353D1913629000F3B3FB /* Bubbles.png */,
 				C97E0B8B18CBC20100634FCA /* newNavBar.png */,
+				C977AFDA1912ED8F0057D73C /* 10.png */,
 				C99E466518CAFAC40097D430 /* Credits.png */,
 				C99E466618CAFAC40097D430 /* Play.png */,
 				C99E466718CAFAC40097D430 /* Scores.png */,
-				C936E4BC18CAEA9E002584B7 /* 1.png */,
-				C936E4BD18CAEA9E002584B7 /* 2.png */,
-				C936E4BE18CAEA9E002584B7 /* 3.png */,
-				C936E4BF18CAEA9E002584B7 /* 4.png */,
-				C936E4C018CAEA9E002584B7 /* 5.png */,
-				C936E4C118CAEA9E002584B7 /* 6.png */,
-				C936E4C218CAEA9E002584B7 /* 7.png */,
-				C936E4C318CAEA9E002584B7 /* 8.png */,
-				C936E4C418CAEA9E002584B7 /* 9.png */,
-				C936E4C518CAEA9E002584B7 /* 10.png */,
-				C936E4C618CAEA9E002584B7 /* 100BubblesPopped.png */,
+				C977AFC81912ED2C0057D73C /* 1.png */,
+				C977AFC91912ED2C0057D73C /* 2.png */,
+				C977AFCA1912ED2C0057D73C /* 3.png */,
+				C977AFCB1912ED2C0057D73C /* 5.png */,
+				C977AFCC1912ED2C0057D73C /* 6.png */,
+				C977AFD41912ED350057D73C /* 8.png */,
+				C977AFD51912ED350057D73C /* 9.png */,
+				C977AFD81912ED3C0057D73C /* 4.png */,
+				C977AFCD1912ED2C0057D73C /* 7.png */,
+				C977AFC41912EBDB0057D73C /* 0.png */,
+				C9EDD41D191196C1006132E7 /* 100BubblesPopped.png */,
+				C9EDD41B19119191006132E7 /* KeepGoing.png */,
 				C936E4C718CAEA9E002584B7 /* GameOver.png */,
-				C936E4C818CAEA9E002584B7 /* KeepGoing.png */,
 				C936E4C918CAEA9E002584B7 /* NewHighScore.png */,
 			);
 			name = support;
@@ -351,9 +370,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C936E47C18CAEA34002584B7 /* Bubble Madness */ = {
+		C936E47C18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C936E4B218CAEA34002584B7 /* Build configuration list for PBXNativeTarget "Bubble Madness" */;
+			buildConfigurationList = C936E4B218CAEA34002584B7 /* Build configuration list for PBXNativeTarget "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename" */;
 			buildPhases = (
 				C936E47918CAEA34002584B7 /* Sources */,
 				C936E47A18CAEA34002584B7 /* Frameworks */,
@@ -363,14 +382,14 @@
 			);
 			dependencies = (
 			);
-			name = "Bubble Madness";
+			name = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename";
 			productName = "Bubble Madness";
-			productReference = C936E47D18CAEA34002584B7 /* Bubble Madness.app */;
+			productReference = C936E47D18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C936E4A018CAEA34002584B7 /* Bubble MadnessTests */ = {
+		C936E4A018CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C936E4B518CAEA34002584B7 /* Build configuration list for PBXNativeTarget "Bubble MadnessTests" */;
+			buildConfigurationList = C936E4B518CAEA34002584B7 /* Build configuration list for PBXNativeTarget "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests" */;
 			buildPhases = (
 				C936E49D18CAEA34002584B7 /* Sources */,
 				C936E49E18CAEA34002584B7 /* Frameworks */,
@@ -381,9 +400,9 @@
 			dependencies = (
 				C936E4A718CAEA34002584B7 /* PBXTargetDependency */,
 			);
-			name = "Bubble MadnessTests";
+			name = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests";
 			productName = "Bubble MadnessTests";
-			productReference = C936E4A118CAEA34002584B7 /* Bubble MadnessTests.xctest */;
+			productReference = C936E4A118CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -396,12 +415,23 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Matthew Voss";
 				TargetAttributes = {
+					C936E47C18CAEA34002584B7 = {
+						DevelopmentTeam = N2WNSNJ5RF;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
+					};
 					C936E4A018CAEA34002584B7 = {
 						TestTargetID = C936E47C18CAEA34002584B7;
 					};
 				};
 			};
-			buildConfigurationList = C936E47818CAEA34002584B7 /* Build configuration list for PBXProject "Bubble Madness" */;
+			buildConfigurationList = C936E47818CAEA34002584B7 /* Build configuration list for PBXProject "bubble OPP" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -414,8 +444,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C936E47C18CAEA34002584B7 /* Bubble Madness */,
-				C936E4A018CAEA34002584B7 /* Bubble MadnessTests */,
+				C936E47C18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename */,
+				C936E4A018CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -425,43 +455,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C979237818CC10DE005E2328 /* POP6.png in Resources */,
-				C936E4D118CAEA9E002584B7 /* 8.png in Resources */,
-				C936E4D018CAEA9E002584B7 /* 7.png in Resources */,
-				C936E4CB18CAEA9E002584B7 /* 2.png in Resources */,
-				C936E49718CAEA34002584B7 /* Main_iPad.storyboard in Resources */,
+				C977AFD61912ED350057D73C /* 8.png in Resources */,
+				C977AFC51912EBDB0057D73C /* 0.png in Resources */,
 				C9E25CC818D4020B0070FCB1 /* B1.jpg in Resources */,
-				C936E4D218CAEA9E002584B7 /* 9.png in Resources */,
-				C979237318CC10DE005E2328 /* POP1.png in Resources */,
+				C977AFCF1912ED2C0057D73C /* 2.png in Resources */,
 				C936E4D518CAEA9E002584B7 /* GameOver.png in Resources */,
-				C936E4D618CAEA9E002584B7 /* KeepGoing.png in Resources */,
-				C9E25CCA18D4020B0070FCB1 /* B3.jpg in Resources */,
 				C936E4D718CAEA9E002584B7 /* NewHighScore.png in Resources */,
-				C979237918CC10DE005E2328 /* POP7.png in Resources */,
 				C936E49C18CAEA34002584B7 /* Images.xcassets in Resources */,
 				C99E466918CAFAC40097D430 /* Play.png in Resources */,
+				C977AFD91912ED3C0057D73C /* 4.png in Resources */,
 				C99E466A18CAFAC40097D430 /* Scores.png in Resources */,
+				C977AFD71912ED350057D73C /* 9.png in Resources */,
 				C936E49418CAEA34002584B7 /* Main_iPhone.storyboard in Resources */,
-				C936E4CF18CAEA9E002584B7 /* 6.png in Resources */,
 				C9E25CD018D403730070FCB1 /* bubbleBG.png in Resources */,
-				C936E4D318CAEA9E002584B7 /* 10.png in Resources */,
-				C9E25CC918D4020B0070FCB1 /* B2.jpg in Resources */,
-				C936E4CD18CAEA9E002584B7 /* 4.png in Resources */,
-				C936E4D418CAEA9E002584B7 /* 100BubblesPopped.png in Resources */,
-				C9E25CCB18D4020B0070FCB1 /* B4.jpg in Resources */,
+				C9A1353E1913629000F3B3FB /* Bubbles.png in Resources */,
+				C9EDD41E191196C1006132E7 /* 100BubblesPopped.png in Resources */,
+				C977AFD01912ED2C0057D73C /* 3.png in Resources */,
+				C977AFDB1912ED8F0057D73C /* 10.png in Resources */,
+				C977AFD21912ED2C0057D73C /* 6.png in Resources */,
+				C9EDD41C19119191006132E7 /* KeepGoing.png in Resources */,
+				C977AFD31912ED2C0057D73C /* 7.png in Resources */,
+				C9E25CCB18D4020B0070FCB1 /* B2.jpg in Resources */,
 				C936E48B18CAEA34002584B7 /* InfoPlist.strings in Resources */,
 				C9E25CCE18D4036C0070FCB1 /* bubbleFG.png in Resources */,
+				C9EF6CE6191027D40003364E /* bubblepop1.m4a in Resources */,
 				C99E466818CAFAC40097D430 /* Credits.png in Resources */,
-				C936E4CE18CAEA9E002584B7 /* 5.png in Resources */,
-				C9E25CCC18D4020B0070FCB1 /* B5.jpg in Resources */,
+				C9E25CCC18D4020B0070FCB1 /* B3.jpg in Resources */,
+				C977AFCE1912ED2C0057D73C /* 1.png in Resources */,
+				C977AFD11912ED2C0057D73C /* 5.png in Resources */,
 				C964D8AA18CD29460030E299 /* addTime.png in Resources */,
-				C936E4CC18CAEA9E002584B7 /* 3.png in Resources */,
-				C979237718CC10DE005E2328 /* POP5.png in Resources */,
-				C979237418CC10DE005E2328 /* POP2.png in Resources */,
-				C936E4CA18CAEA9E002584B7 /* 1.png in Resources */,
-				C979237518CC10DE005E2328 /* POP3.png in Resources */,
+				C986BD2119103A070017126D /* bubblepop2.m4a in Resources */,
+				C977AFC71912EC1E0057D73C /* BubblesPopped.png in Resources */,
 				C9B191C018F8BB8E009CE335 /* save.plist in Resources */,
-				C95CA10E18FB89E20076BA27 /* 0.png in Resources */,
+				C91AB1211910626C0042A4C3 /* POP1.png in Resources */,
+				C986BD2219103A090017126D /* bubblepop3.m4a in Resources */,
 				C979237618CC10DE005E2328 /* POP4.png in Resources */,
 				C97E0B8C18CBC20100634FCA /* newNavBar.png in Resources */,
 			);
@@ -489,9 +516,11 @@
 				C90137D318CEC02D0020D54E /* CreditsViewcontroller.m in Sources */,
 				C90137D818CED4950020D54E /* MVHighScoreViewController.m in Sources */,
 				C936E49118CAEA34002584B7 /* MVAppDelegate.m in Sources */,
+				C901E69D190EF6A000798529 /* UIColor+Extension.m in Sources */,
 				C99EBD0618CBADB300F23842 /* MVButtonBar.m in Sources */,
 				C936E50018CAEB38002584B7 /* MVBubbleView.m in Sources */,
 				C90137DB18CED6430020D54E /* MVHighScore.m in Sources */,
+				C9870DF61912BD54000B00D9 /* CreditsView.m in Sources */,
 				C97A3D0818CF754A00FC10D2 /* MVHighScoreBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,7 +538,7 @@
 /* Begin PBXTargetDependency section */
 		C936E4A718CAEA34002584B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C936E47C18CAEA34002584B7 /* Bubble Madness */;
+			target = C936E47C18CAEA34002584B7 /* bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename */;
 			targetProxy = C936E4A618CAEA34002584B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -529,14 +558,6 @@
 				C936E49318CAEA34002584B7 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		C936E49518CAEA34002584B7 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C936E49618CAEA34002584B7 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		C936E4AB18CAEA34002584B7 /* InfoPlist.strings */ = {
@@ -627,11 +648,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Bubble Madness/Bubble Madness-Prefix.pch";
-				INFOPLIST_FILE = "Bubble Madness/Bubble Madness-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Bubble Madness/bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Prefix.pch";
+				INFOPLIST_FILE = "Bubble Madness/bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Info.plist";
+				PRODUCT_NAME = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -642,11 +665,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Bubble Madness/Bubble Madness-Prefix.pch";
-				INFOPLIST_FILE = "Bubble Madness/Bubble Madness-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Bubble Madness/bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Prefix.pch";
+				INFOPLIST_FILE = "Bubble Madness/bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename-Info.plist";
+				PRODUCT_NAME = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -667,8 +691,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Bubble MadnessTests/Bubble MadnessTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Bubble MadnessTests/bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests-Info.plist";
+				PRODUCT_NAME = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -685,8 +709,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bubble Madness/Bubble Madness-Prefix.pch";
-				INFOPLIST_FILE = "Bubble MadnessTests/Bubble MadnessTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Bubble MadnessTests/bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests-Info.plist";
+				PRODUCT_NAME = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -695,7 +719,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C936E47818CAEA34002584B7 /* Build configuration list for PBXProject "Bubble Madness" */ = {
+		C936E47818CAEA34002584B7 /* Build configuration list for PBXProject "bubble OPP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C936E4B018CAEA34002584B7 /* Debug */,
@@ -704,7 +728,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C936E4B218CAEA34002584B7 /* Build configuration list for PBXNativeTarget "Bubble Madness" */ = {
+		C936E4B218CAEA34002584B7 /* Build configuration list for PBXNativeTarget "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C936E4B318CAEA34002584B7 /* Debug */,
@@ -713,7 +737,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C936E4B518CAEA34002584B7 /* Build configuration list for PBXNativeTarget "Bubble MadnessTests" */ = {
+		C936E4B518CAEA34002584B7 /* Build configuration list for PBXNativeTarget "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C936E4B618CAEA34002584B7 /* Debug */,

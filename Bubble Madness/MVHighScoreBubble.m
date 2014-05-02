@@ -30,63 +30,77 @@
 {
     NSString *score = HighScore;
     
+    int didgetFrameHeight = (self.frame.size.height * .5);
+    int didgetFrameWidth  = (self.frame.size.width  * .25);
+    
+    
     if (score.length == 4) {
-        self.firstDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * 0, self.frame.size.height * .5, self.frame.size.width* .25, self.frame.size.height*.25)];
+        didgetFrameHeight = (self.frame.size.height * .4);
+        int didgetFrameWidth  = (self.frame.size.width  * .2);
+        self.firstDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .1, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.firstDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:0]]];
         [self addSubview:self.firstDidget];
         
-        self.secondDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .25, self.frame.size.height * .5, self.frame.size.width * .25, self.frame.size.height * .25)];
+        self.secondDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .3, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.secondDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:1]]];
         [self addSubview:self.secondDidget];
 
-        self.thridDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .5, self.frame.size.height * .5, self.frame.size.width * .25, self.frame.size.height * .25)];
+        self.thridDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .5, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.thridDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:2]]];
         [self addSubview:self.thridDidget];
        
-        self.fourthDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .75, self.frame.size.height * .5, self.frame.size.width * .25, self.frame.size.height * .25)];
+        self.fourthDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .7, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.fourthDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:3]]];
         [self addSubview:self.fourthDidget];
 
-        
     } else if (score.length == 3) {
-        self.firstDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .12, self.frame.size.height * .5, self.frame.size.width*.25, self.frame.size.height*.25)];
+        self.firstDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .125, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.firstDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:0]]];
         [self addSubview:self.firstDidget];
         
-        self.secondDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .37, self.frame.size.height * .5, self.frame.size.width * .25, self.frame.size.height * .25)];
+        self.secondDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .375, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.secondDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:1]]];
         [self addSubview:self.secondDidget];
         
-        self.thridDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .62, self.frame.size.height * .5, self.frame.size.width * .25, self.frame.size.height * .25)];
+        self.thridDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .625, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.thridDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:2]]];
         [self addSubview:self.thridDidget];
 
     } else if (score.length == 2) {
-        self.firstDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .25, self.frame.size.height * .5, self.frame.size.width*.25, self.frame.size.height*.25)];
+        self.firstDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .25, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.firstDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:0]]];
         [self addSubview:self.firstDidget];
         
-        self.secondDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .5, self.frame.size.height * .5, self.frame.size.width * .25, self.frame.size.height * .25)];
+        self.secondDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .5, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)), didgetFrameWidth, didgetFrameHeight)];
         self.secondDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:1]]];
         [self addSubview:self.secondDidget];
 
     } else if (score.length == 1) {
-        self.firstDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .37, self.frame.size.height * .5, self.frame.size.width*.25, self.frame.size.height*.25)];
+        self.firstDidget = [[UIImageView alloc]initWithFrame:CGRectMake(self.frame.size.width * .375, ((self.frame.size.height * .5) - (didgetFrameHeight * .5)),didgetFrameWidth, didgetFrameHeight)];
         self.firstDidget.image = [UIImage imageNamed:[NSString stringWithFormat:@"%c.png", [score characterAtIndex:0]]];
         [self addSubview:self.firstDidget];
-
     }
-    
 }
 
--(void)putHighScoreName:(NSString *)name
+-(void)removeSubviewsFromView
 {
+    [self.forground removeFromSuperview];
     
-    UITextField *testName = [[UITextField alloc] initWithFrame:CGRectMake(self.frame.size.width * .2, self.frame.size.height * .25, self.frame.size.width * .6, self.frame.size.height * .25)];
-    testName.text = name;
-    testName.textAlignment = NSTextAlignmentCenter;
-    [self addSubview:testName];
-    
+    [self.firstDidget removeFromSuperview];
+    [self.secondDidget removeFromSuperview];
+    [self.thridDidget removeFromSuperview];
+    [self.fourthDidget removeFromSuperview];
+
+}
+
+-(void)removeForgroundFromView
+{
+    [self.forground removeFromSuperview];
+}
+
+-(void)addForgroundToView
+{
+    [self addSubview:self.forground];
 }
 
 @end

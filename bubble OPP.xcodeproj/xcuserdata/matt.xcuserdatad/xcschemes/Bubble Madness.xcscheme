@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C936E47C18CAEA34002584B7"
                BuildableName = "Bubble Madness.app"
-               BlueprintName = "Bubble Madness"
-               ReferencedContainer = "container:Bubble Madness.xcodeproj">
+               BlueprintName = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename"
+               ReferencedContainer = "container:bubble OPP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C936E4A018CAEA34002584B7"
                BuildableName = "Bubble MadnessTests.xctest"
-               BlueprintName = "Bubble MadnessTests"
-               ReferencedContainer = "container:Bubble Madness.xcodeproj">
+               BlueprintName = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_renameTests"
+               ReferencedContainer = "container:bubble OPP.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C936E47C18CAEA34002584B7"
             BuildableName = "Bubble Madness.app"
-            BlueprintName = "Bubble Madness"
-            ReferencedContainer = "container:Bubble Madness.xcodeproj">
+            BlueprintName = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:bubble OPP.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C936E47C18CAEA34002584B7"
             BuildableName = "Bubble Madness.app"
-            BlueprintName = "Bubble Madness"
-            ReferencedContainer = "container:Bubble Madness.xcodeproj">
+            BlueprintName = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:bubble OPP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C936E47C18CAEA34002584B7"
             BuildableName = "Bubble Madness.app"
-            BlueprintName = "Bubble Madness"
-            ReferencedContainer = "container:Bubble Madness.xcodeproj">
+            BlueprintName = "bubble OPP.temp_caseinsensitive_rename.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:bubble OPP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

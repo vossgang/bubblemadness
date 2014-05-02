@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak) NSMutableArray        *highScores;
 
+@property (nonatomic) NSInteger GAME_MODE;
 
 +(NSString *)documentsDirectory;
 

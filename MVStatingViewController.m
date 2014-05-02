@@ -13,22 +13,17 @@
 #import "MVHighScoreViewController.h"
 #import "MVHighScore.h"
 
-
 @interface MVStatingViewController () <UICollisionBehaviorDelegate>
 
-
-@property (nonatomic, strong) MVBubbleView  *startBubble;
-@property (nonatomic, strong) MVBubbleView  *creditsBubble;
-@property (nonatomic, strong) MVBubbleView  *highScoreBubble;
-
-@property (nonatomic, strong) NSMutableArray *highScores;
-
-@property (nonatomic, strong) NSMutableArray *extraBubbles;
-
+@property (nonatomic, strong) MVBubbleView          *startBubble;
+@property (nonatomic, strong) MVBubbleView          *creditsBubble;
+@property (nonatomic, strong) MVBubbleView          *highScoreBubble;
+@property (nonatomic, strong) NSMutableArray        *highScores;
+@property (nonatomic, strong) NSMutableArray        *extraBubbles;
 @property (nonatomic, strong) UIDynamicAnimator     *animator;
 @property (nonatomic, strong) UIGravityBehavior     *gravity;
 @property (nonatomic, strong) UICollisionBehavior   *collision;
-
+@property (nonatomic, strong) NSTimer               *gravityTimer;
 
 @end
 
@@ -39,12 +34,12 @@
     [super viewWillAppear:animated];
     
     UIImageView *bgview = [[UIImageView alloc] initWithFrame:self.view.frame];
-    bgview.image = [UIImage imageNamed:@"B5.jpg"];
+    bgview.image = [UIImage imageNamed:@"B3.jpg"];
     [self.view addSubview:bgview];
     
-    self.startBubble = [[MVBubbleView alloc] initFrameForStarting:CGRectMake(50, 50, 156, 156)];
-    self.creditsBubble = [[MVBubbleView alloc] initFrameForStarting:CGRectMake(200, 200, 100, 100)];
-    self.highScoreBubble = [[MVBubbleView alloc] initFrameForStarting:CGRectMake(100, 300, 128, 128)];
+    self.startBubble        = [[MVBubbleView alloc] initFrameForStarting:CGRectMake(50, 50, 156, 156)];
+    self.creditsBubble      = [[MVBubbleView alloc] initFrameForStarting:CGRectMake(200, 200, 100, 100)];
+    self.highScoreBubble    = [[MVBubbleView alloc] initFrameForStarting:CGRectMake(100, 300, 128, 128)];
     [self.view addSubview:self.creditsBubble];
     [self.view addSubview:self.startBubble];
     [self.view addSubview:self.highScoreBubble];
@@ -62,12 +57,9 @@
 {
     [super viewDidAppear:YES];
     
-    
     NSMutableArray *myArray = [NSMutableArray new];
-
     [self loadFromFile];
 
-    
     if (!self.highScores) {
         NSString *pathForPlistInBudle = [[NSBundle mainBundle] pathForResource:@"save" ofType:@"plist"];
         myArray = [NSKeyedUnarchiver unarchiveObjectWithFile:pathForPlistInBudle];
@@ -77,9 +69,9 @@
             [self saveToFile];
         }
     }
-        
+    
+    [self setUpTimers];
 }
-
 
 -(void)setUpGravity;
 {
@@ -87,7 +79,7 @@
     
     CGVector direction;
     direction = self.gravity.gravityDirection;
-    direction.dy *= .807;
+    direction.dy *= .207;
     [self.gravity setGravityDirection:direction];
     for (int i = 0 ; i < self.extraBubbles.count; i++) {
             MVBubbleView *newBubble = [self.extraBubbles objectAtIndex:i];
@@ -96,7 +88,6 @@
     [self.gravity addItem:self.startBubble];
     [self.gravity addItem:self.creditsBubble];
     [self.gravity addItem:self.highScoreBubble];
-    
 }
 
 -(void)setUpCollision
@@ -110,7 +101,6 @@
     [self.collision addItem:self.startBubble];
     [self.collision addItem:self.creditsBubble];
     [self.collision addItem:self.highScoreBubble];
-    
 }
 
 -(void)setUpAnimator
@@ -127,11 +117,8 @@
     [self.animator addBehavior:self.creditsBubble.itemBehavior];
 }
 
-
-
 -(void)setUpTap
 {
-    
     self.startBubble.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self.startBubble setUserInteractionEnabled:YES];
     [self.startBubble addGestureRecognizer:self.startBubble.tapRecognizer];
@@ -150,45 +137,37 @@
         [thisBubble setUserInteractionEnabled:YES];
         [thisBubble addGestureRecognizer:thisBubble.tapRecognizer];
     }
-    
-    
 }
+
 - (void)handleTap:(UITapGestureRecognizer *)sender
 {
     if (self.startBubble.tapRecognizer == sender) {
-        MVViewController *playGame = [MVViewController new];
-        playGame.highScores = self.highScores;
-        [self presentViewController:playGame animated:YES completion:Nil];
+        MVViewController *timedGame = [MVViewController new];
+        timedGame.highScores = self.highScores;
+        timedGame.GAME_MODE = timedMode;
+        [self presentViewController:timedGame animated:YES completion:Nil];
         
     } else if (self.creditsBubble.tapRecognizer == sender) {
-        CreditsViewcontroller *credits = [CreditsViewcontroller new];
-        [self presentViewController:credits animated:YES completion:Nil];
+        CreditsViewcontroller *continuous = [CreditsViewcontroller new];
+        [self presentViewController:continuous animated:YES completion:Nil];
         
     } else if (self.highScoreBubble.tapRecognizer == sender) {
         MVHighScoreViewController *highScore = [MVHighScoreViewController new];
         highScore.highScores = self.highScores;
         [self presentViewController:highScore animated:YES completion:Nil];
-        
-    } else {
-#warning DO SOMETHING COOL WHEN THE EXTRA BUBBLES ARE TOUCHED
-        NSLog(@"DO SOMETHING COOL WHEN THE EXTRA BUBBLES ARE TOUCHED");
     }
-    
 }
-
 
 -(void)distortBubble:(UITapGestureRecognizer *)sender
 {
     for (int i = 0; i < self.extraBubbles.count; i++) {
         MVBubbleView *thisBubble = [self.extraBubbles objectAtIndex:i];
         if (thisBubble.tapRecognizer == sender) {
-            [self popThisBubble:thisBubble count:0];
+            [self popThisBubble:thisBubble];
+            break;
         }
     }
-    
-    
 }
-
 
 -(void)setUpExtraBubbles
 {
@@ -210,39 +189,55 @@
     self.extraBubbles = newArray;
 }
 
+-(void)setUpTimers
+{
+    self.gravityTimer     = [NSTimer scheduledTimerWithTimeInterval:1.5
+                                                             target:self
+                                                           selector:@selector(changeGravity)
+                                                           userInfo:Nil
+                                                            repeats:YES];
+}
 
-- (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item
-   withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p {
-    
-    CGVector direction;
-    direction = self.gravity.gravityDirection;
+-(void)changeGravity
+{
+    CGVector direction = self.gravity.gravityDirection;
     direction.dy *= -1.0;
-
-    MVBubbleView *newbubble = [self.extraBubbles objectAtIndex:0];
-    
-    if (item == newbubble) {
-        [self.gravity setGravityDirection:direction];
-    }
-    
+    [self.gravity setGravityDirection:direction];
 }
 
 -(void)popThisBubble:(MVBubbleView *)bubble
-               count:(int)count
 {
-    if (count == 0) {
-        [bubble.forground removeFromSuperview];
-        [self popThisBubble:bubble count:(count + 1)];
-    } else if (count < 4) {
-        [UIView animateWithDuration:.09 animations:^{
-            bubble.frame = CGRectMake(bubble.frame.origin.x, bubble.frame.origin.y + 1, bubble.frame.size.width, bubble.frame.size.height);
-            bubble.background.image = [UIImage imageNamed:[NSString stringWithFormat:@"POP%d", count]];
+    [self.collision removeItem:bubble];
+    [self.gravity removeItem:bubble];
+    [self.animator removeBehavior:bubble.itemBehavior];
+    [bubble removeForgroundFromView];
+    
+    [UIView animateWithDuration:.125 animations:^{
+        int rotaion = arc4random() % 2;
+        if (rotaion) {
+            rotaion =(M_PI/3);
+        } else
+        {
+            rotaion = (M_PI / -3);
+        }
+        bubble.transform = CGAffineTransformMakeRotation(rotaion);
+        bubble.transform = CGAffineTransformMakeScale(1.5,1.5);
+        [UIView animateWithDuration:.125 animations:^{
+            bubble.background.image = [UIImage imageNamed:[NSString stringWithFormat:@"POP4"]];
+            bubble.alpha = 0;
         } completion:^(BOOL finished) {
-            [self popThisBubble:bubble count:(count + 1)];
+            
         }];
-    } else {
-        bubble.background.image = [UIImage imageNamed:[NSString stringWithFormat:@"bubbleBG"]];
+    } completion:^(BOOL finished) {
+        bubble.transform = CGAffineTransformMakeScale(1,1);
+        bubble.alpha = 1;
+        [self.collision addItem:bubble];
+        [self.gravity addItem:bubble];
+        [self.animator addBehavior:bubble.itemBehavior];
+        bubble.background.image = [UIImage imageNamed:@"bubbleBG"];
+        bubble.forground.image = [UIImage imageNamed:@"bubbleFG"];
         [bubble addSubview:bubble.forground];
-    }
+    }];
 }
 
 -(void)saveToFile
@@ -261,7 +256,6 @@
     NSMutableArray *myArray  = [NSMutableArray new];
     myArray  = [NSKeyedUnarchiver unarchiveObjectWithFile:appFile];
     self.highScores = myArray;
-
 }
 
 @end

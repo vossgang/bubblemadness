@@ -11,23 +11,19 @@
 #import "MVHighScore.h"
 #import "MVHighScoreBubble.h"
 
-@interface MVHighScoreViewController ()
+@interface MVHighScoreViewController () <UIActionSheetDelegate>
 
 @property (nonatomic)         CGRect             screenRect;
 @property (nonatomic, strong) MVButtonBar       *toolBar;
-
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble0;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble1;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble2;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble3;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble4;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble5;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble6;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble7;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble8;
-@property (nonatomic, strong) MVHighScoreBubble *highScoreBubble9;
-
-
+@property (nonatomic, strong) NSMutableArray    *highScoreBubbles;
+@property (nonatomic, strong) UIImageView       *bgview;
+@property (nonatomic, strong) UIActionSheet     *deleteSheet;
+@property (nonatomic)         NSInteger          indexOfBubble;
+@property (nonatomic, strong) UIDynamicAnimator     *animator;              //animate the bubbles
+@property (nonatomic, strong) UIGravityBehavior     *gravity;               //gravity for the bubbles
+@property (nonatomic, strong) UICollisionBehavior   *collision;             //collision for everything on screen
+@property (nonatomic, strong) NSTimer               *changeGravityXTimer;
+@property (nonatomic, strong) NSTimer               *changeGravityYTimer;
 
 @end
 
@@ -36,24 +32,85 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.highScoreBubbles = [NSMutableArray new];
     
     self.screenRect = [[UIScreen mainScreen] bounds];
     
-    UIImageView *bgview = [[UIImageView alloc] initWithFrame:self.view.frame];
-    bgview.image = [UIImage imageNamed:[NSString stringWithFormat:@"B%d.jpg", ((arc4random() % 5) + 1)]];
+    self.bgview = [[UIImageView alloc] initWithFrame:self.view.frame];
+    self.bgview.image = [UIImage imageNamed:[NSString stringWithFormat:@"B%d.jpg", ((arc4random() % 3) + 1)]];
     
-    [self.view addSubview:bgview];
+    [self.view addSubview:self.bgview];
     [self placeToolBar];
+    self.deleteSheet = [[UIActionSheet alloc] initWithTitle:@"Delete HighScore?" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Delete This High Score", nil];
+}
+
+
+-(void)changeGravityX
+{
     
+    CGVector direction =  self.gravity.gravityDirection;
+    direction.dx *= -1.0;
+    self.gravity.gravityDirection = direction;
+}
+
+-(void)changeGravityY
+{
+    
+    CGVector direction =  self.gravity.gravityDirection;
+    direction.dy *= -1.0;
+    self.gravity.gravityDirection = direction;
+}
+
+-(void)setUpAnimations
+{
+    self.collision = [UICollisionBehavior new];
+    self.collision.translatesReferenceBoundsIntoBoundary = YES;
+    [self.collision addBoundaryWithIdentifier:@"toolbar" fromPoint:CGPointMake(0, self.toolBar.frame.origin.y) toPoint:CGPointMake(self.screenRect.size.width, self.toolBar.frame.origin.y)];
+    
+    self.gravity = [UIGravityBehavior new];
+    CGVector direction = self.gravity.gravityDirection;
+    direction.dy *= .207;
+    direction.dx  = .105;
+    [self.gravity setGravityDirection:direction];
+    
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    [self.animator addBehavior:self.gravity];
+    [self.animator addBehavior:self.collision];
+    
+    MVHighScoreBubble *HSbubble;
+    for (int i = 0 ; i < self.highScores.count; i++) {
+        HSbubble = [self.highScoreBubbles objectAtIndex:i];
+        HSbubble.itemBehavior = [UIDynamicItemBehavior new];
+        HSbubble.itemBehavior.elasticity = 1;
+        HSbubble.itemBehavior.allowsRotation = NO;
+        [self.gravity addItem:HSbubble];
+        [self.collision addItem:HSbubble];
+        [self.animator addBehavior:HSbubble.itemBehavior];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     if (self.highScores) {
-        [self showHighScores];
+        if (self.screenRect.size.height > 500) {
+            [self showHighScoresForTalliPhone];
+        } else {
+            [self showHighScoresForSmalliPhone];
+        }
+        [self setUpAnimations];
+        self.changeGravityXTimer = [NSTimer scheduledTimerWithTimeInterval:1.4
+                                                                    target:self
+                                                                  selector:@selector(changeGravityX)
+                                                                  userInfo:nil
+                                                                   repeats:YES];
+        
+        self.changeGravityYTimer = [NSTimer scheduledTimerWithTimeInterval:2.1
+                                                                    target:self
+                                                                  selector:@selector(changeGravityY)
+                                                                  userInfo:nil
+                                                                   repeats:YES];
     }
-    
 }
 
 -(void)placeToolBar
@@ -82,97 +139,137 @@
     [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
-#warning NEED-TO-SUBCLASS-UIVIEW-AGAIN
--(void)showHighScores
+-(void)showHighScoresForTalliPhone
 {
+    NSArray *bubblearray = @[   [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(24, 1, 128, 128)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(168, 1, 128, 128)],
+                                
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(1, 130, 96, 96)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(107, 130, 96, 96)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(213, 130, 96, 96)],
+                                
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(24, 237, 84, 84)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(168, 237, 84, 84)],
+                                
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(1, 367, 72, 72)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(107, 367, 72, 72)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(213, 367, 72, 72)],
+                                
+                                ];
     
-    MVHighScore *thisHighScore = [self.highScores objectAtIndex:0];
-    self.highScoreBubble0 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(24, 1, 128, 128)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble0 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble0 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble0];
-
+    self.highScoreBubbles = [bubblearray mutableCopy];
     
-    
-    thisHighScore = [self.highScores objectAtIndex:1];
-    self.highScoreBubble1 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(168, 1, 128, 128)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble1 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble1 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble1];
-    
-    
-    thisHighScore = [self.highScores objectAtIndex:2];
-    self.highScoreBubble2 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(1, 130, 106, 106)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble2 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble2 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble2];
-    
-    
-    thisHighScore = [self.highScores objectAtIndex:3];
-    self.highScoreBubble3 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(107, 130, 106, 106)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble3 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble3 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble3];
-    
-    
-    thisHighScore = [self.highScores objectAtIndex:4];
-    self.highScoreBubble4 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(213, 130, 106, 106)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble4 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble4 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble4];
-
-    
-    thisHighScore = [self.highScores objectAtIndex:5];
-    self.highScoreBubble5 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(24, 237, 128, 128)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble5 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble5 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble5];
-    
-    
-    thisHighScore = [self.highScores objectAtIndex:6];
-    self.highScoreBubble6 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(168, 237, 128, 128)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble6 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble6 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble6];
-    
-    
-    thisHighScore = [self.highScores objectAtIndex:7];
-    self.highScoreBubble7 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(1, 367, 106, 106)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble7 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble7 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble7];
-    
-    
-    thisHighScore = [self.highScores objectAtIndex:8];
-    self.highScoreBubble8 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(107, 367, 106, 106)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble8 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble8 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble8];
-    
-    
-    thisHighScore = [self.highScores objectAtIndex:9];
-    self.highScoreBubble9 = [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(213, 367, 106, 106)];
-    thisHighScore.score = [NSString stringWithFormat:@"%ld", thisHighScore.number];
-    [self.highScoreBubble9 putHighScoreImage:thisHighScore.score];
-    [self.highScoreBubble9 putHighScoreName:thisHighScore.playerName];
-    [self.view addSubview:_highScoreBubble9];
-    
+    [self addImagesToHighScoreBubbles];
 }
 
+-(void)showHighScoresForSmalliPhone
+{
+    NSArray *bubblearray = @[   [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(24, 1, 128, 128)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(168, 1, 128, 128)],
+                                
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(10, 125, 96, 96)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(112, 125, 96, 96)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(214, 125, 96, 96)],
+                                
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(43, 215, 84, 84)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(180, 215, 84, 84)],
+                                
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(10, 305, 72, 72)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(112, 305, 72, 72)],
+                                [[MVHighScoreBubble alloc] initWithFrame:CGRectMake(214, 305, 72, 72)],
+                                
+                                ];
+    
+    self.highScoreBubbles = [bubblearray mutableCopy];
+    [self addImagesToHighScoreBubbles];
+}
+
+-(void)addImagesToHighScoreBubbles
+{
+    MVHighScore *thisHighScore = [MVHighScore new];
+    
+    for (int i = 0; i < self.highScores.count; i++) {
+        thisHighScore = [self.highScores objectAtIndex:i];
+        thisHighScore.score = [NSString stringWithFormat:@"%ld", (long)thisHighScore.number];
+        [self.highScoreBubbles[i] putHighScoreImage:thisHighScore.score];
+        //        [self.highScoreBubbles[i] putHighScoreName:thisHighScore.playerName];
+        [self.view addSubview:self.highScoreBubbles[i]];
+    }
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for (UITouch *touch in touches) {
+        CGPoint touchPoint = [touch locationInView:self.view];
+        for (MVHighScoreBubble *bubble in self.view.subviews){
+            
+            if ([bubble isKindOfClass:[MVHighScoreBubble class]]) {
+                if ([self distanceBetweenPoint:touchPoint andPoint:bubble.center] < (bubble.frame.size.height * .45)){
+                    if (self.highScores.count > 1) {
+                        self.indexOfBubble = [self.highScoreBubbles indexOfObject:bubble];
+                        [self.deleteSheet showInView:self.view];
+                    }
+                }
+            }
+        }
+    }
+}
+
+-(void)popThisBubble:(MVHighScoreBubble *)bubble
+{
+    [bubble removeSubviewsFromView];
+
+    [UIView animateWithDuration:.25 animations:^{
+        int rotaion = arc4random() % 2;
+        if (rotaion) {
+            rotaion =(M_PI/3);
+        } else
+        {
+            rotaion = (M_PI / -3);
+        }
+        bubble.transform = CGAffineTransformMakeRotation(rotaion);
+        bubble.transform = CGAffineTransformMakeScale(1.5,1.5);
+        [UIView animateWithDuration:.125 animations:^{
+            bubble.background.image = [UIImage imageNamed:[NSString stringWithFormat:@"POP4"]];
+            bubble.alpha = 0;
+        } completion:^(BOOL finished) {
+            
+        }];
+    } completion:^(BOOL finished) {
+        [self deleteHighScore:[self.highScores objectAtIndex:self.indexOfBubble]];
+        [self.highScoreBubbles removeObject:bubble];
+        [bubble removeFromSuperview];
+    }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self saveToFile];
+}
+
+-(CGFloat)distanceBetweenPoint:(CGPoint)p1 andPoint:(CGPoint)p2
+{
+    return sqrt(pow((p2.x - p1.x), 2) + pow((p2.y - p1.y), 2));
+}
+
+-(void)saveToFile
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"save.plist"];
+    [NSKeyedArchiver archiveRootObject:self.highScores toFile:appFile];
+}
+
+-(void)deleteHighScore:(MVHighScore *)score
+{
+        [self.highScores removeObjectIdenticalTo:score];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Delete This High Score"]) {
+        [self popThisBubble:self.highScoreBubbles[self.indexOfBubble]];
+    }
+}
 @end
-
-
-
-
-
-
-

@@ -22,7 +22,18 @@
 @property (nonatomic, strong)   UIImageView             *secondLetter;
 @property (nonatomic, strong)   UIImageView             *thirdLetter;
 
+@property (nonatomic, strong)   UIDynamicItemBehavior   *itemBehavior;
+
+@property (nonatomic, strong)   UILabel                 *testName;
+
+@property (nonatomic)           BOOL                     isAnimating;
+
 -(void)putHighScoreImage:(NSString *)HighScore;
--(void)putHighScoreName:(NSString *)name;
+//-(void)putHighScoreName:(NSString *)name;
+-(void)removeSubviewsFromView;
+
+-(void)removeForgroundFromView;
+-(void)addForgroundToView;
+
 
 @end

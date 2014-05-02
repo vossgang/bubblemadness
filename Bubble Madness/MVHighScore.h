@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSString *score;
 @property (nonatomic)         NSInteger number;
 
+-(id)initWithEmptyScore;
 
 @end

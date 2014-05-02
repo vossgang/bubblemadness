@@ -7,6 +7,7 @@
 //
 
 #import "MVButtonBar.h"
+#import "UIColor+Extension.h"
 
 @implementation MVButtonBar
 
@@ -24,14 +25,16 @@
         
         self.clock = [[UILabel alloc] initWithFrame:CGRectMake((frame.size.width * .66), (frame.size.height * .255), (frame.size.width * .2773), (frame.size.height * .494))];
         [self addSubview:self.clock];
-        self.clock.textColor = [UIColor blackColor];
+        self.clock.textColor = [UIColor flatMidnightBlueColor];
+        self.clock.font = [UIFont fontWithName:@"AvenirNext-Bold" size:20];
         self.clock.textAlignment = NSTextAlignmentCenter;
         self.clock.text = [NSString stringWithFormat:@"Time"];
    
         self.score = [[UILabel alloc] initWithFrame:CGRectMake((frame.size.width * .3711), (frame.size.height * .255), (frame.size.width * .2891), (frame.size.height * .494))];
         [self addSubview:self.score];
-        self.score.textColor = [UIColor blackColor];
+        self.score.textColor = [UIColor flatMidnightBlueColor];
         self.score.textAlignment = NSTextAlignmentCenter;
+        self.score.font = [UIFont fontWithName:@"AvenirNext-Bold" size:20];
         self.score.text = [NSString stringWithFormat:@"Score"];
     }
     return self;

@@ -10,7 +10,16 @@
 
 @implementation MVHighScore
 
-
+-(id)initWithEmptyScore
+{
+    self = [super init];
+    if (self) {
+        self.score = @"0";
+        self.number = 0;
+        self.playerName = @"NIL";
+    }
+    return self;
+}
 
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
@@ -30,6 +39,5 @@
      }
     return self;
 }
-
 
 @end
